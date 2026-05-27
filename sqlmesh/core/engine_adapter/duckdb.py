@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import typing as t
-from sqlglot import exp
 from pathlib import Path
+
+from sqlglot import exp
 
 from sqlmesh.core.engine_adapter.mixins import (
     GetCurrentCatalogFromFunctionMixin,
-    LogicalMergeMixin,
     RowDiffMixin,
 )
 from sqlmesh.core.engine_adapter.shared import (
@@ -25,7 +25,7 @@ if t.TYPE_CHECKING:
 
 
 @set_catalog(override_mapping={"_get_data_objects": CatalogSupport.REQUIRES_SET_CATALOG})
-class DuckDBEngineAdapter(LogicalMergeMixin, GetCurrentCatalogFromFunctionMixin, RowDiffMixin):
+class DuckDBEngineAdapter(GetCurrentCatalogFromFunctionMixin, RowDiffMixin):
     DIALECT = "duckdb"
     SUPPORTS_TRANSACTIONS = False
     SCHEMA_DIFFER_KWARGS = {
