@@ -166,7 +166,7 @@ include-package-data = false
 
 [tool.setuptools_scm]
 version_file = "sqlmesh/_version.py"
-fallback_version = "0.0.0"
+fallback_version = "0.235.0+pix4d.custom.1"
 local_scheme = "no-local-version"
 
 [tool.setuptools.packages.find]
